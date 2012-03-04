@@ -15,12 +15,7 @@
   },
   "dependencies": {
     "colors": "*",
-    "request": "git+ssh://git@github.com:jesusabdullah/request.git",
-    "flatiron": "0.1.14",
-    "moment": "1.4.0",
-    "zip": "0.0.6",
-    "utile": "0.0.10",
-    "multimeter": "0.1.0",
+    "grabthar": "git+ssh://git@github.com:jesusabdullah/grabthar.git",
     "mc_jsonapi": "1.1.0"
   },
   "devDependencies": {},

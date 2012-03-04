@@ -3,12 +3,11 @@
 var fs = require('fs'),
     path = require('path'),
     colors = require('colors'),
-    utile = require('utile'),
-    app = require('../lib/grabthar');
+    grabthar = require('grabthar');
 
-app.init();
+grabthar.init();
 
-app.download({
+grabthar.download({
   name: 'craftbukkit',
   url: 'http://dl.bukkit.org/latest-rb/craftbukkit.jar',
   path: path.resolve(path.join(__dirname, '..', 'craftbukkit.jar'))
@@ -17,7 +16,7 @@ app.download({
     throw err;
   }
 
-  app.download({
+  grabthar.download({
     name: 'JSONApi',
     url: 'http://alecgorge.com/minecraft/jsonapi/version/latest/',
     path: path.resolve(path.join(__dirname, '..', 'plugins', 'jsonapi.zip'))
@@ -26,7 +25,7 @@ app.download({
       throw err;
     }
 
-    app.unzip(state, finish);
+    grabthar.unzip(state, finish);
   });
 
 });
@@ -36,6 +35,6 @@ function finish (err) {
     throw err;
   }
 
-  app.log.info('Done.');
+  grabthar.log.info('Done.');
   process.exit(0);
 }
