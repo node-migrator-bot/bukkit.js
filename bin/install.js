@@ -3,43 +3,28 @@
 var fs = require('fs'),
     path = require('path'),
     colors = require('colors'),
-    grabthar = require('grabthar');
+    utile = require('utile'),
+    g = require('grabthar');
 
-grabthar.start(function (err) {
-  if (err) {
-    throw err;
-  }
+g.start(function (err) {
+  g.catch(err);
 
-  grabthar.download({
+  g.download({
     name: 'craftbukkit',
     url: 'http://dl.bukkit.org/latest-rb/craftbukkit.jar',
     path: path.resolve(path.join(__dirname, '..', 'craftbukkit.jar'))
   }, function (err) {
-    if (err) {
-      throw err;
-    }
+    g.catch(err);
 
-    grabthar.download({
+    g.download({
       name: 'JSONApi',
       url: 'http://alecgorge.com/minecraft/jsonapi/version/latest/',
       path: path.resolve(path.join(__dirname, '..', 'plugins', 'jsonapi.zip'))
     }, function (err, state) {
-      if (err) {
-        throw err;
-      }
+      g.catch(err);
 
-      grabthar.unzip(state, finish);
+      g.unzip(state, g.finish);
     });
 
   });
-
-  function finish (err) {
-    if (err) {
-      throw err;
-    }
-
-    grabthar.log.info('Done.');
-    process.exit(0);
-  }
-
 });
