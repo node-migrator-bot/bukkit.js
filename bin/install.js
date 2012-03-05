@@ -2,8 +2,6 @@
 
 var fs = require('fs'),
     path = require('path'),
-    colors = require('colors'),
-    utile = require('utile'),
     grabthar = require('grabthar');
 
 grabthar
