@@ -14,9 +14,7 @@
     "start": "node bin/bukkit.js"
   },
   "dependencies": {
-    "colors": "*",
     "grabthar": "git+ssh://git@github.com:jesusabdullah/grabthar.git",
-    "utile": "0.0.10",
     "mc_jsonapi": "1.1.0"
   },
   "devDependencies": {},
